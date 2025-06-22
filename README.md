@@ -27,7 +27,7 @@ pip install chromedriver-py==xxx.x.xxxx.xxx # Replace xxx.x.xxxx.xxx with your a
 
 ```bash
 git clone https://github.com/wowowo-wo/Yauction_auto_relist
-cd Yauction_auto_relist
+cd Yauc_autorelist
 pip install -r requirements.txt
 ```
 
