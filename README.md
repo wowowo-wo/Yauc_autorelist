@@ -4,7 +4,7 @@ This is a python tool that automatically relist closed auctions on Yahoo! Auctio
 
 ## Using
 
-### 1. Install Google Chrome (on Ubuntu):
+### 1. Install Google Chrome (on Ubuntu)
 
 ```bash
 wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/google-chrome.gpg
@@ -13,9 +13,9 @@ sudo apt update
 sudo apt install google-chrome-stable
 ```
 
-### 2. Install ChromeDriver matching your Chrome version:
+### 2. Install ChromeDriver matching your Chrome version
 
-check your installed Chrome version and install the corresponding ChromeDriver via pip
+check your installed Chrome version and install the corresponding ChromeDriver via pip:
 
 ```bash
 google-chrome --version
@@ -23,11 +23,11 @@ google-chrome --version
 pip install chromedriver-py==xxx.x.xxxx.xxx # Replace xxx.x.xxxx.xxx with your actual Chrome version from the above command.
 ```
 
-### 3. Clone this repo and install requirements:
+### 3. Clone this repo and install requirements
 
 ```bash
 git clone https://github.com/wowowo-wo/Yauction_auto_relist
-cd Yauction_auto_relist
+cd Yauc_autorelist
 pip install -r requirements.txt
 ```
 
