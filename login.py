@@ -12,9 +12,8 @@ options.add_argument('--disable-dev-shm-usage')
 
 driver = webdriver.Chrome(service=Service(binary_path), options=options)
 
-input("open chrome for log-in")
+input("open chrome, press Enter after log-in")
 driver.get("https://auctions.yahoo.co.jp/")
-input("press Enter after log-in")
 
 with open("yahoo_cookies.pkl", "wb") as f:
     pickle.dump(driver.get_cookies(), f)

@@ -62,7 +62,7 @@ def click_submit_form_btn(driver, timeout=15):
         btn = wait.until(EC.element_to_be_clickable((By.ID, SUBMIT_FORM_BUTTON_ID)))
         driver.execute_script("arguments[0].click();", btn)
     except Exception as e:
-        print(f"Error:{e}")
+        print(f"Error:{(e)}")
         raise
 
 
@@ -80,6 +80,10 @@ if __name__ == "__main__":
         from chromedriver_py import binary_path
         driver = webdriver.Chrome(service=Service(binary_path), options=options)
         wait = WebDriverWait(driver, 20)
+
+        print(f"access the closed autions page, and load cookie: {YAHOO_AUCTIONS_URL}")
+        driver.get(YAHOO_AUCTIONS_URL)
+        load_cookies(driver, COOKIE_FILE)
 
         print(f"access the closed autions page: {CLOSED_AUCTIONS_URL}")
         driver.get(CLOSED_AUCTIONS_URL)
@@ -112,13 +116,10 @@ if __name__ == "__main__":
                 wait.until(EC.element_to_be_clickable((By.XPATH, RELIST_CONFIRM_XPATH))).click()
                 print("relisted")
                 relisted_count += 1
-                time.sleep(3)
+                time.sleep(5)
 
-            except TimeoutException as e:
-                print(f"Timeout to relist: {e}. go next srep")
-                failed_relist_count += 1
             except Exception as e:
-                print(f"Error: {e}. go to next step")
+                print(f"Error: {repr(e)}. go to next step")
                 failed_relist_count += 1
             finally:
                 driver.get(CLOSED_AUCTIONS_URL)
